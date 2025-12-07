@@ -72,7 +72,7 @@ func (n Note) Breadcrumb() string {
 	return header.Items{
 		header.NewIntItem(n.Year),
 		header.NewTextItem("Notes Index" + page),
-		header.NewTextItem(n.ref()).Ref(true),
+		header.NewTextItem(n.ref()).Ref(true).Bold(true),
 	}.Table(true)
 }
 

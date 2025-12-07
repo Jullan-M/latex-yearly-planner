@@ -8,6 +8,7 @@ import (
 
 type MonthItem struct {
 	Val     time.Month
+	bold	bool
 	ref     bool
 	shorten bool
 }
@@ -20,6 +21,10 @@ func (m MonthItem) Display() string {
 		text = text[:3]
 	}
 
+	if m.bold {
+		text = "\\textbf{" + text + "}"
+	}
+
 	if m.ref {
 		return hyper.Target(ref, text)
 	}
@@ -29,6 +34,12 @@ func (m MonthItem) Display() string {
 
 func (m MonthItem) Ref() MonthItem {
 	m.ref = true
+
+	return m
+}
+
+func (m MonthItem) Bold(f bool) MonthItem {
+	m.bold = f
 
 	return m
 }

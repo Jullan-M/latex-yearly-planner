@@ -8,17 +8,23 @@ import (
 
 type IntItem struct {
 	Val int
+	bold bool
 	ref bool
 }
 
 func (i IntItem) Display() string {
 	var out string
-	s := strconv.Itoa(i.Val)
+	ref := strconv.Itoa(i.Val)
+	text := ref
+
+	if i.bold {
+		text = "\\textbf{" + text + "}"
+	}
 
 	if i.ref {
-		out = hyper.Target(s, s)
+		out = hyper.Target(ref, text)
 	} else {
-		out = hyper.Link(s, s)
+		out = hyper.Link(ref, text)
 	}
 
 	return out
@@ -26,6 +32,12 @@ func (i IntItem) Display() string {
 
 func (i IntItem) Ref() IntItem {
 	i.ref = true
+
+	return i
+}
+
+func (i IntItem) Bold(f bool) IntItem {
+	i.bold = f
 
 	return i
 }

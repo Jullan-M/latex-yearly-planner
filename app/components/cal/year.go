@@ -28,7 +28,7 @@ func NewYear(wd time.Weekday, year int) *Year {
 
 func (y Year) Breadcrumb() string {
 	return header.Items{
-		header.NewIntItem(y.Number).Ref(),
+		header.NewIntItem(y.Number).Ref().Bold(true),
 		header.NewItemsGroup(
 			header.NewTextItem("Q1"),
 			header.NewTextItem("Q2"),
