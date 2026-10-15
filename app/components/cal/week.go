@@ -282,6 +282,9 @@ func (w *Week) HeadingMOS() string {
 	if w.PrevExists() {
 		leftNavBox := tex.ResizeBoxW(`\myLenHeaderResizeBox`, `$\langle$`)
 		contents = append(contents, tex.Hyperlink(w.Prev().ref(), leftNavBox))
+	} else {
+		leftNavBox := tex.ResizeBoxW(`\myLenHeaderResizeBox`, `$[$`)
+		contents = append(contents, leftNavBox)
 	}
 
 	contents = append(contents, tex.ResizeBoxW(`\myLenHeaderResizeBox`, w.Target()))
@@ -289,6 +292,9 @@ func (w *Week) HeadingMOS() string {
 	if w.NextExists() {
 		rightNavBox := tex.ResizeBoxW(`\myLenHeaderResizeBox`, `$\rangle$`)
 		contents = append(contents, tex.Hyperlink(w.Next().ref(), rightNavBox))
+	} else {
+		rightNavBox := tex.ResizeBoxW(`\myLenHeaderResizeBox`, `$]$`)
+		contents = append(contents, rightNavBox)
 	}
 
 	return tex.Tabular("@{}"+strings.Repeat("l", len(contents)), strings.Join(contents, ` & `))

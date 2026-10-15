@@ -159,24 +159,30 @@ func (d Day) HeadingMOS(prefix, leaf string) string {
 	var ll, rl string
 	var r1, r2 []string
 
+	ll = "l"
 	if d.PrevExists() {
-		ll = "l"
 		leftNavBox := tex.ResizeBoxW(anglesize, `$\langle$`)
 		r1 = append(r1, tex.Multirow(2, tex.Hyperlink(d.Prev().ref(prefix), leftNavBox)))
-		r2 = append(r2, "")
+	} else {
+		leftNavBox := tex.ResizeBoxW(anglesize, `$[$`)
+		r1 = append(r1, tex.Multirow(2, leftNavBox))
 	}
+	r2 = append(r2, "")
 
 	r1 = append(r1, tex.Multirow(2, tex.ResizeBoxW(`\myLenHeaderResizeBox`, day)))
 	r2 = append(r2, "")
 	r1 = append(r1, tex.Bold(d.Time.Weekday().String()))
 	r2 = append(r2, d.Time.Month().String())
 
+	rl = "l"
 	if d.NextExists() {
-		rl = "l"
 		rightNavBox := tex.ResizeBoxW(anglesize, `$\rangle$`)
 		r1 = append(r1, tex.Multirow(2, tex.Hyperlink(d.Next().ref(prefix), rightNavBox)))
-		r2 = append(r2, "")
+	} else {
+		rightNavBox := tex.ResizeBoxW(anglesize, `$]$`)
+		r1 = append(r1, tex.Multirow(2, rightNavBox))
 	}
+	r2 = append(r2, "")
 
 	contents := strings.Join(r1, ` & `) + `\\` + "\n" + strings.Join(r2, ` & `)
 	return tex.Hypertarget(prefix+d.ref(), "") + tex.Tabular("@{}"+ll+"l|l"+rl, contents)

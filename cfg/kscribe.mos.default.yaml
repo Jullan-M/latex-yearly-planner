@@ -1,0 +1,26 @@
+layout:
+  paper:
+    width: 15.3cm
+    height: 20.3cm
+
+    margin:
+      top: 0.3cm
+      bottom: 0.3cm
+      left: 0.8cm
+      right: 0.3cm
+
+    reversemargins: true
+    marginparwidth: .8cm
+    marginparsep: .25mm
+
+  lengths:
+    quarterlyspring: \textcolor{white}{.}
+
+  numbers:
+    dailytodos: 5
+    dailynotes: 28
+    dailydiarygoals: 10
+    dailydiarygrateful: 2
+    dailydiarybest: 2
+    dailydiarylog: 29
+    notesonpage: 37

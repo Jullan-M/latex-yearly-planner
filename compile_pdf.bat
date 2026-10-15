@@ -1,5 +1,6 @@
 set PLANNER_YEAR=2026
-go run cmd/plannergen/plannergen.go --config "cfg/base.yaml,cfg/template_breadcrumb.yaml,cfg/kscribe.breadcrumb.default.yaml,cfg/kscribe.breadcrumb.default.dailycal.yaml"
+go run cmd/plannergen/plannergen.go --config "cfg/base.yaml,cfg/template_months_on_side.yaml,cfg/kscribe.mos.default.yaml,cfg/kscribe.mos.default.dailycal.yaml"
 cd out
-xelatex "kscribe.breadcrumb.default.dailycal.tex"
+xelatex "kscribe.mos.default.dailycal.tex"
+xelatex "kscribe.mos.default.dailycal.tex"
 cd ..
