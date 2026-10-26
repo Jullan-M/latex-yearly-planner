@@ -6,15 +6,18 @@ layout:
     margin:
       top: 0.3cm
       bottom: 0.3cm
-      left: 0.8cm
-      right: 0.3cm
+      left: 0.9cm
+      right: 0.15cm
 
     reversemargins: true
-    marginparwidth: .8cm
-    marginparsep: .25mm
+    marginparwidth: 0.9cm
+    marginparsep: 0.15cm
 
   lengths:
     quarterlyspring: \textcolor{white}{.}
+    headersidecellheight: "[0.4ex]"
+    headersidequarterswidth: 4cm
+    headersidemonthswidth: 14.80cm
 
   numbers:
     dailytodos: 5
@@ -24,3 +27,4 @@ layout:
     dailydiarybest: 0
     dailydiarylog: 37
     notesonpage: 37
+    dotheightfull: 37
