@@ -10,10 +10,10 @@ l_page = "1.3cm 2cm 0.3cm 1.35cm"
 r_page = "0.22cm 2cm 1.3cm 1.35cm"
 add_page_string = r"""
 
-\vspace*{-18.91cm}
-\makebox[14.93cm][r]{%
+\vspace*{-18.87cm}
+\makebox[14.75cm][r]{%
   \raisebox{-\totalheight}[0pt][0pt]{
-    \includegraphics[page=<page>,trim=<trim>,clip,width=5.5cm]{wotaw.pdf}
+    \includegraphics[page=<page>,trim=<trim>,clip,width=5.8cm]{../wotaw.pdf}
   }
 }"""
 magic_string = (
